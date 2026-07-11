@@ -1,162 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>IJSO Master Flashcards</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="manifest" href="manifest.json">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#17242B" />
+<meta name="description" content="1000 flashcards for the International Junior Science Olympiad — Biology, Chemistry, Physics, and General Science." />
+<title>IJSO Master Flashcards</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2317242B'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' fill='%23E2892D' text-anchor='middle'%3E%C6%92%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header>
-    <h1>🧪 IJSO Master Flashcards</h1>
+<div class="app" id="app">
 
-    <p>
-        Biology • Chemistry • Physics • General Science
-    </p>
-</header>
-
-
-<main>
-
-<section class="controls">
-
-    <button id="prev">
-        ◀ Previous
-    </button>
-
-    <button id="flip">
-        Flip Card
-    </button>
-
-    <button id="next">
-        Next ▶
-    </button>
-
-</section>
-
-
-<section class="stats">
-
-    <span id="counter">
-        Card 1 / 1000
-    </span>
-
-    <span id="subject">
-        Biology
-    </span>
-
-</section>
-
-
-<div class="card-container">
-
-    <div id="card" class="card">
-
-        <div class="front">
-
-            <h2 id="question">
-                Question
-            </h2>
-
-            <p id="short">
-                Short answer
-            </p>
-
-        </div>
-
-
-        <div class="back">
-
-            <h2>
-                Answer
-            </h2>
-
-            <p id="answer">
-                Full answer
-            </p>
-
-
-            <h3>
-                Explanation
-            </h3>
-
-            <p id="explanation">
-                Explanation
-            </p>
-
-
-            <h3>
-                Memory Tip
-            </h3>
-
-            <p id="memory">
-                Memory
-            </p>
-
-        </div>
-
+  <!-- ===================== HEADER / DRAWER RAIL ===================== -->
+  <header class="rail">
+    <div class="rail-brand">
+      <span class="rail-mark" aria-hidden="true">&#402;</span>
+      <div class="rail-titles">
+        <h1>IJSO Master Flashcards</h1>
+        <p class="rail-sub">1000-card catalog &middot; Biology &middot; Chemistry &middot; Physics &middot; General Science</p>
+      </div>
     </div>
 
+    <div class="rail-tools">
+      <div class="search-slot">
+        <label for="search" class="sr-only">Search cards</label>
+        <input id="search" type="search" placeholder="Search the catalog&hellip; ( / )" autocomplete="off" />
+        <kbd class="search-hint">/</kbd>
+      </div>
+
+      <button id="shuffleBtn" class="ghost-btn" type="button" title="Shuffle deck (s)">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17 3l4 4-4 4V8h-3.6c-.5 0-1 .2-1.3.6L10 11l-2 2-2.1 2.4c-.3.4-.8.6-1.3.6H2v-2h2.6c.2 0 .3-.1.4-.2L7 12l2-2 2.1-2.4c.6-.7 1.5-1.1 2.4-1.1H17V3zM17 21l4-4-4-4v3h-3.5c-.9 0-1.8-.4-2.4-1.1L9 12.5 7 10.5l-2.1-2.4c-.1-.1-.2-.2-.4-.2H2v2h2.6c.5 0 1 .2 1.3.6l2 2.3 2 2.3c.4.4.8.7 1.3.7H17v3z"/></svg>
+        <span>Shuffle</span>
+      </button>
+
+      <button id="installBtn" class="ghost-btn" type="button" hidden>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17l-4.7-4.7 1.4-1.4 3.3 3.3V3h2zM5 19h14v2H5v-2z"/></svg>
+        <span>Install</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== SUBJECT / FILTER STRIP ===================== -->
+  <nav class="subject-strip" id="subjectStrip" aria-label="Filter by subject">
+    <!-- populated by app.js -->
+  </nav>
+
+  <!-- ===================== MAIN STAGE ===================== -->
+  <main class="stage">
+
+    <div class="stage-meta">
+      <div class="progress-wrap" title="Cards you've marked as mastered">
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <span class="progress-label"><strong id="masteredCount">0</strong> / <span id="totalCount">0</span> mastered</span>
+      </div>
+      <div class="deck-position" id="deckPosition">Card 1 of 1000</div>
+    </div>
+
+    <div class="card-wrap">
+      <button class="nav-arrow nav-arrow--prev" id="prevBtn" aria-label="Previous card (←)">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M15.4 7.4L14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
+      </button>
+
+      <section class="card-scene">
+        <article class="card" id="flashcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flashcard. Press space or enter to flip.">
+          <div class="card-inner" id="cardInner">
+
+            <!-- FRONT -->
+            <div class="card-face card-face--front">
+              <span class="card-tab" id="tabFront" aria-hidden="true"></span>
+              <span class="card-hole" aria-hidden="true"></span>
+              <header class="card-face-head">
+                <span class="card-id" id="cardIdFront">#0000</span>
+                <span class="card-subject" id="cardSubjectFront">Subject &middot; Topic</span>
+              </header>
+              <div class="card-body">
+                <p class="card-eyebrow">Question</p>
+                <p class="card-text" id="cardQuestion">Loading&hellip;</p>
+              </div>
+              <footer class="card-face-foot">
+                <button class="know-btn know-btn--front" data-mark="unknown" title="Mark for review (1)">Still learning</button>
+                <span class="flip-hint">tap card or press space to flip</span>
+                <button class="know-btn know-btn--front know-btn--good" data-mark="known" title="Mark mastered (2)">I know this</button>
+              </footer>
+            </div>
+
+            <!-- BACK -->
+            <div class="card-face card-face--back">
+              <span class="card-tab" id="tabBack" aria-hidden="true"></span>
+              <span class="card-hole" aria-hidden="true"></span>
+              <header class="card-face-head">
+                <span class="card-id" id="cardIdBack">#0000</span>
+                <span class="card-difficulty" id="cardDifficulty">medium</span>
+              </header>
+              <div class="card-body">
+                <p class="card-eyebrow">Answer</p>
+                <p class="card-text card-text--answer" id="cardAnswer">&mdash;</p>
+              </div>
+              <footer class="card-face-foot">
+                <button class="know-btn" data-mark="unknown" title="Mark for review (1)">Still learning</button>
+                <span class="flip-hint">tap card to flip back</span>
+                <button class="know-btn know-btn--good" data-mark="known" title="Mark mastered (2)">I know this</button>
+              </footer>
+            </div>
+
+          </div>
+        </article>
+      </section>
+
+      <button class="nav-arrow nav-arrow--next" id="nextBtn" aria-label="Next card (→)">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4L13.2 12z"/></svg>
+      </button>
+    </div>
+
+    <p class="empty-state" id="emptyState" hidden>No cards match &ldquo;<span id="emptyQuery"></span>&rdquo;. Try another search or clear the subject filter.</p>
+
+    <footer class="keymap">
+      <span><kbd>&larr;</kbd><kbd>&rarr;</kbd> navigate</span>
+      <span><kbd>space</kbd> flip</span>
+      <span><kbd>1</kbd> still learning</span>
+      <span><kbd>2</kbd> mastered</span>
+      <span><kbd>s</kbd> shuffle</span>
+      <span><kbd>/</kbd> search</span>
+    </footer>
+  </main>
 </div>
-
-
-<section class="tools">
-
-<input 
-    id="search"
-    placeholder="Search flashcards..."
->
-
-
-<select id="filter">
-
-<option value="all">
-All Subjects
-</option>
-
-<option value="Biology">
-Biology
-</option>
-
-<option value="Chemistry">
-Chemistry
-</option>
-
-<option value="Physics">
-Physics
-</option>
-
-<option value="General Science">
-General Science
-</option>
-
-</select>
-
-
-</section>
-
-
-</main>
-
-
-<footer>
-
-<p>
-IJSO Master Flashcards © 2026
-</p>
-
-</footer>
-
 
 <script src="flashcards.js"></script>
 <script src="app.js"></script>
-
-
 </body>
 </html>
