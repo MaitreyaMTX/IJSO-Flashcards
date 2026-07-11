@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IJSO Master Flashcards</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<header>
+    <h1>🧪 IJSO Master Flashcards</h1>
+
+    <p>
+        Biology • Chemistry • Physics • General Science
+    </p>
+</header>
+
+
+<main>
+
+<section class="controls">
+
+    <button id="prev">
+        ◀ Previous
+    </button>
+
+    <button id="flip">
+        Flip Card
+    </button>
+
+    <button id="next">
+        Next ▶
+    </button>
+
+</section>
+
+
+<section class="stats">
+
+    <span id="counter">
+        Card 1 / 1000
+    </span>
+
+    <span id="subject">
+        Biology
+    </span>
+
+</section>
+
+
+<div class="card-container">
+
+    <div id="card" class="card">
+
+        <div class="front">
+
+            <h2 id="question">
+                Question
+            </h2>
+
+            <p id="short">
+                Short answer
+            </p>
+
+        </div>
+
+
+        <div class="back">
+
+            <h2>
+                Answer
+            </h2>
+
+            <p id="answer">
+                Full answer
+            </p>
+
+
+            <h3>
+                Explanation
+            </h3>
+
+            <p id="explanation">
+                Explanation
+            </p>
+
+
+            <h3>
+                Memory Tip
+            </h3>
+
+            <p id="memory">
+                Memory
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<section class="tools">
+
+<input 
+    id="search"
+    placeholder="Search flashcards..."
+>
+
+
+<select id="filter">
+
+<option value="all">
+All Subjects
+</option>
+
+<option value="Biology">
+Biology
+</option>
+
+<option value="Chemistry">
+Chemistry
+</option>
+
+<option value="Physics">
+Physics
+</option>
+
+<option value="General Science">
+General Science
+</option>
+
+</select>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<p>
+IJSO Master Flashcards © 2026
+</p>
+
+</footer>
+
+
+<script src="flashcards.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>
