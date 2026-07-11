@@ -187,8 +187,7 @@ explanation:"Examples include regulation of body temperature, blood glucose, and
 memory:"Homeostasis = Balance",
 
 related:"Human Biology"
-}
-  ];
+},
 
 {
 id:11,
@@ -368,6 +367,6 @@ explanation:"A stretched rubber band or a book on a shelf has potential energy."
 memory:"Stored = Potential.",
 
 related:"Kinetic Energy"
-}w
+}
 
 ];
