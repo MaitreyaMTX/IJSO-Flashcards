@@ -368,3 +368,4 @@ memory:"Stored = Potential.",
 
 related:"Kinetic Energy"
 }
+  ];
