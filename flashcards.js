@@ -190,3 +190,184 @@ related:"Human Biology"
 }
 
 ];
+,
+
+{
+id:11,
+subject:"Physics",
+level:"Foundation",
+
+question:"What is motion?",
+
+short:"Change in position",
+
+answer:"Motion is the change in the position of an object with respect to time.",
+
+explanation:"An object is said to be in motion if its position changes relative to a reference point.",
+
+memory:"Moving = Motion.",
+
+related:"Speed, Distance"
+},
+
+{
+id:12,
+subject:"Physics",
+level:"Foundation",
+
+question:"What is velocity?",
+
+short:"Speed with direction",
+
+answer:"Velocity is speed in a particular direction.",
+
+explanation:"Unlike speed, velocity includes both magnitude and direction.",
+
+memory:"Velocity = Speed + Direction.",
+
+related:"Motion"
+},
+
+{
+id:13,
+subject:"Physics",
+level:"Foundation",
+
+question:"What is acceleration?",
+
+short:"Rate of change of velocity",
+
+answer:"Acceleration is the rate at which velocity changes with time.",
+
+explanation:"An object accelerates when it speeds up, slows down, or changes direction.",
+
+memory:"Acceleration = Change in velocity.",
+
+related:"Motion"
+},
+
+{
+id:14,
+subject:"Physics",
+level:"Foundation",
+
+question:"State Newton's First Law.",
+
+short:"Law of inertia",
+
+answer:"An object remains at rest or moves with constant velocity unless acted upon by an external force.",
+
+explanation:"Objects naturally resist changes in their state of motion.",
+
+memory:"No force → No change.",
+
+related:"Inertia"
+},
+
+{
+id:15,
+subject:"Physics",
+level:"Intermediate",
+
+question:"What is inertia?",
+
+short:"Resistance to change",
+
+answer:"Inertia is the tendency of an object to resist changes in its state of motion.",
+
+explanation:"Objects with greater mass have greater inertia.",
+
+memory:"More mass = More inertia.",
+
+related:"Newton's First Law"
+},
+
+{
+id:16,
+subject:"Physics",
+level:"Foundation",
+
+question:"What is friction?",
+
+short:"Force opposing motion",
+
+answer:"Friction is a force that opposes the motion between two surfaces in contact.",
+
+explanation:"Friction helps us walk but also causes wear and heat.",
+
+memory:"Friction fights motion.",
+
+related:"Force"
+},
+
+{
+id:17,
+subject:"Physics",
+level:"Foundation",
+
+question:"Name two types of friction.",
+
+short:"Kinds of friction",
+
+answer:"Static friction and kinetic (sliding) friction.",
+
+explanation:"Static friction acts before motion starts, while kinetic friction acts during motion.",
+
+memory:"Static = Standing, Kinetic = Moving.",
+
+related:"Friction"
+},
+
+{
+id:18,
+subject:"Physics",
+level:"Foundation",
+
+question:"What is energy?",
+
+short:"Ability to do work",
+
+answer:"Energy is the capacity to do work or cause change.",
+
+explanation:"Energy exists in many forms such as kinetic, potential, heat, light, and electrical energy.",
+
+memory:"Energy makes things happen.",
+
+related:"Work"
+},
+
+{
+id:19,
+subject:"Physics",
+level:"Foundation",
+
+question:"What is kinetic energy?",
+
+short:"Energy of motion",
+
+answer:"Kinetic energy is the energy possessed by a moving object.",
+
+explanation:"The faster an object moves, the greater its kinetic energy.",
+
+memory:"Moving = Kinetic.",
+
+related:"Potential Energy"
+},
+
+{
+id:20,
+subject:"Physics",
+level:"Foundation",
+
+question:"What is potential energy?",
+
+short:"Stored energy",
+
+answer:"Potential energy is stored energy due to an object's position or condition.",
+
+explanation:"A stretched rubber band or a book on a shelf has potential energy.",
+
+memory:"Stored = Potential.",
+
+related:"Kinetic Energy"
+}
