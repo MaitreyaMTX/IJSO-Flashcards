@@ -368,4 +368,6 @@ explanation:"A stretched rubber band or a book on a shelf has potential energy."
 memory:"Stored = Potential.",
 
 related:"Kinetic Energy"
-}
+},
+
+];
