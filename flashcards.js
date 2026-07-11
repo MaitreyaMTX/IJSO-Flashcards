@@ -187,7 +187,8 @@ explanation:"Examples include regulation of body temperature, blood glucose, and
 memory:"Homeostasis = Balance",
 
 related:"Human Biology"
-},
+}
+  ];
 
 {
 id:11,
