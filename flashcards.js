@@ -14,7 +14,7 @@
  * question/answer), rename the keys below or adjust app.js to match.
  */
 
-const flashcards = [
+window.flashcards = [
   { id: 1, subject: 'Chemistry', topic: 'Periodic Table', question: 'What is the chemical symbol for Hydrogen?', answer: 'H', difficulty: 'easy' },
   { id: 2, subject: 'Chemistry', topic: 'Periodic Table', question: 'Which element has atomic number 1?', answer: 'Hydrogen', difficulty: 'easy' },
   { id: 3, subject: 'Chemistry', topic: 'Periodic Table', question: 'What is the chemical symbol for Helium?', answer: 'He', difficulty: 'easy' },
